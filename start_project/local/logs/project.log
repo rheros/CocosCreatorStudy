@@ -1,0 +1,61 @@
+2018-01-19T06:11:07.528Z - normal: Load ~/.CocosCreator/settings.json
+2018-01-19T06:11:07.532Z - normal: checking language setting...
+2018-01-19T06:11:07.532Z - normal: Language: zh
+2018-01-19T06:11:09.173Z - success: protocol editor-framework registered
+2018-01-19T06:11:09.173Z - success: protocol app registered
+2018-01-19T06:11:09.173Z - success: protocol theme registered
+2018-01-19T06:11:09.173Z - success: protocol packages registered
+2018-01-19T06:11:09.173Z - success: protocol unpack registerred
+2018-01-19T06:11:09.173Z - success: protocol disable-commonjs registerred
+2018-01-19T06:11:09.274Z - normal: connected!
+2018-01-19T06:11:09.276Z - normal: Check project D:\WorkSpace\cocos\CocosCreatorStudy\start_project
+2018-01-19T06:11:09.278Z - normal: Initializing Cocos2d
+2018-01-19T06:11:09.445Z - normal: Initializing Asset Database
+2018-01-19T06:11:09.474Z - success: protocol uuid registerred
+2018-01-19T06:11:09.474Z - success: protocol db registerred
+2018-01-19T06:11:09.474Z - success: protocol thumbnail registerred
+2018-01-19T06:11:09.475Z - normal: Loading editor/builtin packages
+2018-01-19T06:11:09.491Z - success: anysdk loaded
+2018-01-19T06:11:09.584Z - success: assets loaded
+2018-01-19T06:11:09.586Z - success: builder loaded
+2018-01-19T06:11:09.588Z - success: cocos-analytics loaded
+2018-01-19T06:11:09.590Z - success: console loaded
+2018-01-19T06:11:09.592Z - success: hierarchy loaded
+2018-01-19T06:11:09.594Z - success: inspector loaded
+2018-01-19T06:11:09.594Z - success: keystore loaded
+2018-01-19T06:11:09.596Z - success: node-library loaded
+2018-01-19T06:11:09.597Z - success: package-asset loaded
+2018-01-19T06:11:09.598Z - success: preferences loaded
+2018-01-19T06:11:09.599Z - success: project-exporter loaded
+2018-01-19T06:11:09.611Z - success: project-importer loaded
+2018-01-19T06:11:09.613Z - success: project-settings loaded
+2018-01-19T06:11:09.614Z - success: ui-kit loaded
+2018-01-19T06:11:09.616Z - success: ui-grid loaded
+2018-01-19T06:11:09.618Z - success: scene loaded
+2018-01-19T06:11:09.618Z - success: sprite-editor loaded
+2018-01-19T06:11:09.621Z - success: store loaded
+2018-01-19T06:11:09.623Z - success: timeline loaded
+2018-01-19T06:11:09.624Z - normal: Loading builtin packages
+2018-01-19T06:11:09.625Z - success: asset-db-debugger loaded
+2018-01-19T06:11:09.626Z - success: code-editor loaded
+2018-01-19T06:11:09.627Z - success: color-picker loaded
+2018-01-19T06:11:09.628Z - success: package-manager loaded
+2018-01-19T06:11:09.631Z - success: sdkbox loaded
+2018-01-19T06:11:09.634Z - success: tester loaded
+2018-01-19T06:11:09.636Z - success: ui-kit-preview-extra loaded
+2018-01-19T06:11:09.636Z - success: ui-kit-preview loaded
+2018-01-19T06:11:09.637Z - success: ui-tree loaded
+2018-01-19T06:11:10.566Z - normal: Initializing project D:\WorkSpace\cocos\CocosCreatorStudy\start_project
+2018-01-19T06:11:10.568Z - normal: Loading packages
+2018-01-19T06:11:10.571Z - normal: Watching packages
+2018-01-19T06:11:10.580Z - normal: Run Application
+2018-01-19T06:11:12.259Z - success: preview server running at http://localhost:7456
+2018-01-19T06:11:15.383Z - normal: 1.8.1
+2018-01-19T06:11:17.187Z - error: Failed to load scene: Error: [AssetLibrary] loading JSON or dependencies failed: Can not find asset type folder
+    at D:\Program Files\CocosCreator\resources\engine\cocos2d\core\CCDirector.js:812:20
+    at CCLoader.<anonymous> (D:\Program Files\CocosCreator\resources\engine\cocos2d\core\platform\CCAssetLibrary.js:110:17)
+    at D:\Program Files\CocosCreator\resources\engine\cocos2d\core\load-pipeline\CCLoader.js:253:38
+    at D:\Program Files\CocosCreator\resources\engine\cocos2d\core\platform\utils.js:67:21
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+2018-01-19T06:11:17.188Z - failed: Failed to init scene: undefined
