@@ -1,0 +1,53 @@
+2018-01-19T09:29:57.773Z - normal: Load ~/.CocosCreator/settings.json
+2018-01-19T09:29:57.776Z - normal: checking language setting...
+2018-01-19T09:29:57.777Z - normal: Language: zh
+2018-01-19T09:29:59.456Z - success: protocol editor-framework registered
+2018-01-19T09:29:59.456Z - success: protocol app registered
+2018-01-19T09:29:59.456Z - success: protocol theme registered
+2018-01-19T09:29:59.456Z - success: protocol packages registered
+2018-01-19T09:29:59.456Z - success: protocol unpack registerred
+2018-01-19T09:29:59.456Z - success: protocol disable-commonjs registerred
+2018-01-19T09:29:59.576Z - normal: connected!
+2018-01-19T09:29:59.578Z - normal: Check project D:\WorkSpace\cocos\CocosCreatorStudy\complete_project
+2018-01-19T09:29:59.579Z - normal: Initializing Cocos2d
+2018-01-19T09:29:59.742Z - normal: Initializing Asset Database
+2018-01-19T09:29:59.771Z - success: protocol uuid registerred
+2018-01-19T09:29:59.771Z - success: protocol db registerred
+2018-01-19T09:29:59.771Z - success: protocol thumbnail registerred
+2018-01-19T09:29:59.771Z - normal: Loading editor/builtin packages
+2018-01-19T09:29:59.788Z - success: anysdk loaded
+2018-01-19T09:29:59.889Z - success: assets loaded
+2018-01-19T09:29:59.891Z - success: builder loaded
+2018-01-19T09:29:59.893Z - success: cocos-analytics loaded
+2018-01-19T09:29:59.895Z - success: console loaded
+2018-01-19T09:29:59.897Z - success: hierarchy loaded
+2018-01-19T09:29:59.899Z - success: inspector loaded
+2018-01-19T09:29:59.900Z - success: keystore loaded
+2018-01-19T09:29:59.902Z - success: node-library loaded
+2018-01-19T09:29:59.903Z - success: package-asset loaded
+2018-01-19T09:29:59.904Z - success: preferences loaded
+2018-01-19T09:29:59.905Z - success: project-exporter loaded
+2018-01-19T09:29:59.917Z - success: project-importer loaded
+2018-01-19T09:29:59.918Z - success: project-settings loaded
+2018-01-19T09:29:59.921Z - success: ui-kit loaded
+2018-01-19T09:29:59.922Z - success: ui-grid loaded
+2018-01-19T09:29:59.924Z - success: scene loaded
+2018-01-19T09:29:59.925Z - success: sprite-editor loaded
+2018-01-19T09:29:59.927Z - success: store loaded
+2018-01-19T09:29:59.930Z - success: timeline loaded
+2018-01-19T09:29:59.930Z - normal: Loading builtin packages
+2018-01-19T09:29:59.932Z - success: asset-db-debugger loaded
+2018-01-19T09:29:59.933Z - success: code-editor loaded
+2018-01-19T09:29:59.933Z - success: color-picker loaded
+2018-01-19T09:29:59.935Z - success: package-manager loaded
+2018-01-19T09:29:59.937Z - success: sdkbox loaded
+2018-01-19T09:29:59.940Z - success: tester loaded
+2018-01-19T09:29:59.941Z - success: ui-kit-preview-extra loaded
+2018-01-19T09:29:59.942Z - success: ui-kit-preview loaded
+2018-01-19T09:29:59.943Z - success: ui-tree loaded
+2018-01-19T09:30:00.845Z - normal: Initializing project D:\WorkSpace\cocos\CocosCreatorStudy\complete_project
+2018-01-19T09:30:00.847Z - normal: Loading packages
+2018-01-19T09:30:00.850Z - normal: Watching packages
+2018-01-19T09:30:00.861Z - normal: Run Application
+2018-01-19T09:30:01.957Z - success: preview server running at http://localhost:7456
+2018-01-19T09:30:05.519Z - normal: 1.8.1
