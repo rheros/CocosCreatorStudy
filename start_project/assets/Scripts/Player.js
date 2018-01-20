@@ -87,7 +87,6 @@ cc.Class({
 	update(dt) {
 		if(this.isdead)
 			{
-				console.log("m die")
 			return 
 			}
 		// 根据当前加速度方向每帧更新速度

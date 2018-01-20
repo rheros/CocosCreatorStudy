@@ -20,8 +20,8 @@
             "firefoxArgs": ["-start-debugger-server", "-no-remote"],
             "log": {
               "consoleLevel": {
-               // "PathConversion": "Debug",
-                "default": "Debug"
+                "PathConversion": "Warn",
+                "default": "Warn"
               }
             }
         }

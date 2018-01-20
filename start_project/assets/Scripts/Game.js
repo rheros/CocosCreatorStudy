@@ -49,6 +49,7 @@ cc.Class({
     test(){
         console.debug("fuck in debug");
         console.log("fuck in log")
+        console.warn("fuck from warn");
     },
     spawnNewStar: function() {
         this.starDuration = this.minStarDuration + cc.random0To1() * (this.maxStarDuration - this.minStarDuration);

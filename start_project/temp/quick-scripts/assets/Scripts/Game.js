@@ -55,6 +55,7 @@ cc.Class({
     test: function test() {
         console.debug("fuck in debug");
         console.log("fuck in log");
+        console.warn("fuck from warn");
     },
 
     spawnNewStar: function spawnNewStar() {
