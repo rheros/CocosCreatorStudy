@@ -1,0 +1,29 @@
+{
+    "version": "1.4.0",
+    "configurations": [
+        {
+            "name": "Creator Debug: Launch Firefox",
+            "type": "firefox",
+            "request": "launch",
+            "url": "http://localhost:7456",
+           // "sourceMaps": "true",
+            //"userDataDir": "${workspaceRoot}/.vscode/chrome",
+            "firefoxExecutable": "D:/Program Files (x86)/Mozilla Firefox/firefox.exe",
+            //"diagnosticLogging": false,
+            "pathMappings": [{
+                "url": "http://localhost:7456",
+                "/preview-scripts/assets": "${workspaceRoot}/temp/quick-scripts/assets",
+                "/": "${workspaceRoot}"
+            }
+            ],
+            "profile": "default",
+            "firefoxArgs": ["-start-debugger-server", "-no-remote"],
+            "log": {
+              "consoleLevel": {
+               // "PathConversion": "Debug",
+                "default": "Debug"
+              }
+            }
+        }
+    ]
+}

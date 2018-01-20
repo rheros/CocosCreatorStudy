@@ -28,7 +28,6 @@ cc.Class({
     },
 
     // LIFE-CYCLE CALLBACKS:
-
     onLoad: function onLoad() {
         this.starDuration = this.game.starDuration;
     },

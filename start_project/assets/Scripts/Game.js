@@ -1,6 +1,6 @@
 cc.Class({
     extends: cc.Component,
-
+	
     properties: {
         starPrefab: {
             default: null,
@@ -29,9 +29,7 @@ cc.Class({
             type: cc.Button
         }
     },
-
     // LIFE-CYCLE CALLBACKS:
-
     onLoad() {
         this.starDuration = 0;
         this.score = 0;
@@ -47,6 +45,10 @@ cc.Class({
         this.playButton.node.active = false;
         this.spawnNewStar();
         this.playerC.node.runAction(this.playerC.jumpAction);
+    },
+    test(){
+        console.debug("fuck in debug");
+        console.log("fuck in log")
     },
     spawnNewStar: function() {
         this.starDuration = this.minStarDuration + cc.random0To1() * (this.maxStarDuration - this.minStarDuration);

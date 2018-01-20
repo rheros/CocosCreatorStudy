@@ -22,7 +22,6 @@ cc.Class({
         this.node.destroy();
     },
     // LIFE-CYCLE CALLBACKS:
-
      onLoad () {
        this.starDuration= this.game.starDuration
      },

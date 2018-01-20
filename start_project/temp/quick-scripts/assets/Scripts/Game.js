@@ -35,9 +35,7 @@ cc.Class({
             type: cc.Button
         }
     },
-
     // LIFE-CYCLE CALLBACKS:
-
     onLoad: function onLoad() {
         this.starDuration = 0;
         this.score = 0;
@@ -53,6 +51,10 @@ cc.Class({
         this.playButton.node.active = false;
         this.spawnNewStar();
         this.playerC.node.runAction(this.playerC.jumpAction);
+    },
+    test: function test() {
+        console.debug("fuck in debug");
+        console.log("fuck in log");
     },
 
     spawnNewStar: function spawnNewStar() {

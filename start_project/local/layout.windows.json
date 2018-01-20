@@ -7,7 +7,7 @@
       "windowType": "dockable",
       "x": -8,
       "y": -8,
-      "width": 1874,
+      "width": 1861,
       "height": 1096,
       "layout": {
         "children": [
@@ -18,7 +18,7 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 596,
+                "height": 595,
                 "type": "panel",
                 "width": 301
               },
@@ -32,7 +32,7 @@
                 "width": 301
               }
             ],
-            "height": 969,
+            "height": 968,
             "type": "dock-v",
             "width": 301
           },
@@ -45,7 +45,7 @@
                     "children": [
                       "scene"
                     ],
-                    "height": 596,
+                    "height": 595,
                     "type": "panel",
                     "width": 944.984375
                   },
@@ -54,12 +54,12 @@
                     "children": [
                       "node-library"
                     ],
-                    "height": 596,
+                    "height": 595,
                     "type": "panel",
                     "width": 237
                   }
                 ],
-                "height": 596,
+                "height": 595,
                 "type": "dock-h",
                 "width": 1185
               },
@@ -74,7 +74,7 @@
                 "width": 1185
               }
             ],
-            "height": 969,
+            "height": 968,
             "type": "dock-v",
             "width": 1185
           },
@@ -83,7 +83,7 @@
             "children": [
               "inspector"
             ],
-            "height": 969,
+            "height": 968,
             "type": "panel",
             "width": 360
           }
@@ -99,14 +99,30 @@
         "scene",
         "timeline"
       ]
+    },
+    "window-1516437077036": {
+      "main": false,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": 767,
+      "y": 151,
+      "width": 580,
+      "height": 565,
+      "layout": {
+        "children": [],
+        "type": "dock-v"
+      },
+      "panels": [
+        "preferences"
+      ]
     }
   },
   "panels": {
     "preferences": {
-      "x": 641,
-      "y": 261,
+      "x": 767,
+      "y": 151,
       "width": 580,
-      "height": 564
+      "height": 565
     },
     "sprite-editor": {
       "x": 671,
