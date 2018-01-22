@@ -161,7 +161,7 @@
     "node": {
       "__id__": 1
     },
-    "_enabled": true,
+    "_enabled": false,
     "_spriteFrame": {
       "__uuid__": "8cdb44ac-a3f6-449f-b354-7cd48cf84061"
     },
@@ -189,7 +189,9 @@
     },
     "_enabled": true,
     "type": 4,
-    "num": 1,
+    "label": {
+      "__id__": 3
+    },
     "id": 0,
     "GameCtrl": null,
     "hand": {

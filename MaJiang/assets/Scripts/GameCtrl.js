@@ -13,6 +13,7 @@ cc.Class({
         this.store = this.getComponent("CardStore")
         this.store.gameCtrl = this
         this.store.createCardsStore()
+        console.log(this.store.cardsStore.length+" from gamectrl")
         this.ser = this.getComponent("Main")
         this.ser.connectServer()
     },

@@ -5,7 +5,16 @@ cc.Class({
             default : MaTypes.wan,  
             type : cc.Enum(MaTypes)
         } ,
-        num: 1,
+        label:cc.Label,
+        num: {
+            get () {
+               return this._num
+            },
+            set(value){
+                this._num=value
+                this.label.string=""+this._num
+            }
+        },
         id:0,
         GameCtrl: null,
         hand: {
