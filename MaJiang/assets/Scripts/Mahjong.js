@@ -1,9 +1,10 @@
-
 cc.Class({
     extends: cc.Component,
-
     properties: {
-        type: "end",//"wan bing tiao feng hua end"
+        type : {  
+            default : MaTypes.wan,  
+            type : cc.Enum(MaTypes)
+        } ,
         num: 1,
         id:0,
         GameCtrl: null,
@@ -11,11 +12,11 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-        Desk: {
+        desk: {
             default: null,
             type: cc.Node
         },
-        Store: {
+        store: {
             default: null,
             type: cc.Node
         },
@@ -28,20 +29,20 @@ cc.Class({
         this.GameCtrl.cardOut()
     },
     onDesk() {
-        _hideAll()
-        this.ondesk.active = true
+        this._hideAll()
+        this.desk.active = true
     },
-    inhand() {
-        _hideAll()
-        this.inhand.active = true
+    inHand() {
+        this._hideAll()
+        this.hand.active = true
     },
     inStore() {
-        _hideAll()
-        this.inStore.active = true
+        this._hideAll()
+        this.store.active = true
     },
     _hideAll() {
-        this.inhand.active = false
-        this.inStore.active = false
-        this.ondesk.active = false
+        this.hand.active = false
+        this.store.active = false
+        this.desk.active = false
     }
 });

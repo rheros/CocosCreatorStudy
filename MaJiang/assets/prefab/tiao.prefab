@@ -188,13 +188,22 @@
       "__id__": 1
     },
     "_enabled": true,
-    "type": "end",
+    "type": 2,
     "num": 1,
+    "id": 0,
     "GameCtrl": null,
-    "inhand": null,
-    "onDesk": null,
-    "inStore": null,
-    "from": null
+    "hand": {
+      "__id__": 2
+    },
+    "desk": {
+      "__id__": 2
+    },
+    "store": {
+      "__id__": 2
+    },
+    "from": {
+      "__id__": 2
+    }
   },
   {
     "__type__": "cc.PrefabInfo",

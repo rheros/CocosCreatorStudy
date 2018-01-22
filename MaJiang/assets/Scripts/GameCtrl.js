@@ -1,27 +1,31 @@
 
 cc.Class({
     extends: cc.Component,
-    
+
     properties: {
         players: [],
+       
     },
 
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
-        this.store = this.node.getComponent("CardStore")
-        this.store.gameCtrl=this
-        this.server=this.node.getComponent("CenterCtrl")
-        this.server.connectServer()
+        console.log("in onload from gamectrl")
+        this.store = this.getComponent("CardStore")
+        this.store.gameCtrl = this
+        this.store.createCardsStore()
+        this.ser = this.getComponent("Main")
+        this.ser.connectServer()
     },
-    startGame()
-    {
-
+    setStore(storeData) {
+        this.store.setStoreByData(storeData)
+    },
+    startGame() {
     },
     cardOut(card) {
     },
     update(dt) {
     },
     _newRound() {
+    },
 
-    }
 });
