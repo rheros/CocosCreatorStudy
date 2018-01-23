@@ -5,19 +5,54 @@ cc.Class({
         local: true,
         standard: true,
         storeData: [],
+        players: [],
+        robots:{
+            default:[],
+            type:[cc.Node]
+        },
     },
 
     connectServer() {
         if (this.local) {
-            this.initialCardsStore()
-            console.log("cards count is :" + this.storeData.length)
-            //  this.gameCtrl.setStore(this.storeData)
+
+            this.gameCtrl.setMode(standard);//tell client the mode isstand
+            this._getDatas()
+            this._randomDirectoions()
+            this.gameCtrl.initialPlayers(this.players);
+            
+            this.initialCardsStore()//createCardsStore
             this.storeData.sort(randomSort)
-            console.log("random")
             this.gameCtrl.setStore(this.storeData)
-            console.log("id:" + this.storeData[10].id + " type:" + this.storeData[10].type)
+
+            this.gameCtrl.createCardsWall();//tell client to create Wall
         }
     },
+    _getDatas()
+    {
+        robots.forEach(node => {
+            this.players.push(node.getComponent("Robot"))
+        });
+        this.players.push(this._initialPlayerDataLocal())
+    },
+    _randomDirectoions()
+    {
+        this.players.sort(randomSort)
+        for(var i=0;i<this.players.length;i++)
+        {
+            this.players[i].directions=i
+        }
+    },
+    _initialPlayerDataLocal() {
+        var data = new PlayerDataPack()
+        data.id=this.getComponent("Player").id
+        data.dir =0
+        data.coins = 1000
+        data.winTimes = 20
+        data.loseTimes = 10
+        data.playTimes = 30
+        return data
+    },
+
     onLoad() {
         this.gameCtrl = this.getComponent("GameCtrl")
     },

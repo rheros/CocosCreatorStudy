@@ -2,30 +2,20 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
-        //about player info
+        id:110,
         coins: 0,
         winTimes: 0,
         loseTimes: 0,
         playTimes: 0,
+   
         //about contract
-        controller: null,
+        controller: cc.Node,
+        
         //about game
-        direction: -1,
+        dir:{
+            default:Directions.East,
+            type:cc.Enum(Directions)
+        },
         isMain: false,
         isActive: false,
         wanCards: [],
