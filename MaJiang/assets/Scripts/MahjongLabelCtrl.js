@@ -15,7 +15,7 @@ cc.Class({
     setNum(num)
     {
        this._hideLabels()
-       labels[num].active=true
+       this.labels[num].active=true
     },
     _hideLabels()
     {

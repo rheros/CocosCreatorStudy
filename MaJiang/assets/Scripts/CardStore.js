@@ -52,7 +52,7 @@ cc.Class({
         this.waitStore[0].y = 0
     },
     createCardWall(storeData) {
-        col = this.storeData.length / 4
+        var col = storeData.length / 4
         for (var i = 0; i < 4; i++) {
             var pos = this.deskPosProxy[i]
             for (var j = 0; j < col; j++) {

@@ -34,23 +34,28 @@ cc.Class({
     },
     initialPlayers(playerData) {
         playerData.forEach(data => {
-            var ob={data:null,side:null}
-                ob.data=data
+            console.log("set dir :"+data.dir)
+            var ob = { data: null, side: null }
+            ob.data = data
             switch (data.dir) {
                 case Directions.East:
                     this.East = ob
+                    console.log("set east")
                     break
                 case Directions.South:
                     this.South = ob
+                    console.log("set South")
                     break
                 case Directions.West:
                     this.West = ob
+                    console.log("set West")
                     break
                 case Directions.North:
                     this.North = ob
+                    console.log("set North")
                     break
             }
-            if (data.id = p.id) {// daixu
+            if (data.id = this.selfPlayer.getComponent("Player").id) {// daixu
                 this.selfDir = data.dir
             }
         });
@@ -59,24 +64,28 @@ cc.Class({
     _inistialPlayerPos() {
         switch (this.selfDir) {
             case Directions.East:
-                this.left = this.South
-                this.top = this.West
-                this.right = this.North
+                this.East.side = Sides.Bottom
+                this.South.side = Sides.Left
+                this.West.side = Sides.Top
+                this.North.side = Sides.Right
                 break
             case Directions.South:
-                this.left = this.West
-                this.top = this.North
-                this.right = this.East
+                this.South.side = Sides.Bottom
+                this.West.side = Sides.Left
+                this.North.side = Sides.Top
+                this.East.side = Sides.Right
                 break
             case Directions.West:
-                this.left = this.North
-                this.top = this.East
-                this.right = this.South
+                this.West.side = Sides.Bottom
+                this.North.side = Sides.North
+                this.East.side = Sides.Top
+                this.South.side = Sides.Right
                 break
             case Directions.North:
-                this.left = this.East
-                this.top = this.South
-                this.right = this.West
+                this.North.side = Sides.Bottom
+                this.East.side = Sides.Left
+                this.South.side = Sides.Top
+                this.West.side = Sides.Right
                 break
         }
     },

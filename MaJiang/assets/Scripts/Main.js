@@ -15,31 +15,31 @@ cc.Class({
     connectServer() {
         if (this.local) {
 
-            this.gameCtrl.setMode(standard);//tell client the mode isstand
+            this.gameCtrl.setMode(this.standard);//tell client the mode isstand
             this._getDatas()
             this._randomDirectoions()
             this.gameCtrl.initialPlayers(this.players);
             
             this.initialCardsStore()//createCardsStore
             this.storeData.sort(randomSort)
-            this.gameCtrl.setStore(this.storeData)
-
-            this.gameCtrl.createCardsWall();//tell client to create Wall
+            this.gameCtrl.setStore(this.storeData)//tell client to create Wall
         }
     },
     _getDatas()
     {
-        robots.forEach(node => {
+        this.robots.forEach(node => {
             this.players.push(node.getComponent("Robot"))
         });
         this.players.push(this._initialPlayerDataLocal())
     },
     _randomDirectoions()
     {
+        console.log("players length "+this.players.length)
         this.players.sort(randomSort)
         for(var i=0;i<this.players.length;i++)
         {
-            this.players[i].directions=i
+            this.players[i].dir=i
+            console.log("players dir "+i+" dir"+this.players[i].dir)
         }
     },
     _initialPlayerDataLocal() {

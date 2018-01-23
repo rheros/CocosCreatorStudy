@@ -11,6 +11,12 @@ window.Directions = cc.Enum({
     West: 2,
     North: 3
 });
+window.Sides=cc.Enum({
+    Up:0,
+    Right:1,
+    Bottom:2,
+    Left:3
+})
 window.randomSort = function (a, b) {
     return Math.random() > 0.5 ? -1 : 1;
 }
