@@ -45,6 +45,8 @@ cc.Class({
     _initialPlayerDataLocal() {
         var data = new PlayerDataPack()
         data.id=this.getComponent("Player").id
+        data.isMain=true
+        data.isActive=true
         data.dir =0
         data.coins = 1000
         data.winTimes = 20

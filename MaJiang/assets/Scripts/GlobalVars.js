@@ -18,7 +18,7 @@ window.Sides=cc.Enum({
     Left:3
 })
 window.randomSort = function (a, b) {
-    return Math.random() > 0.5 ? -1 : 1;
+    return Math.random() > 0 ? -1 : 1;
 }
 
 window.StoreDataPack = cc.Class({
@@ -34,6 +34,8 @@ window.StoreDataPack = cc.Class({
 })
 window.PlayerDataPack = cc.Class({
     properties: {
+        isMain:false,
+        isActive:false,
         dir: 0,
         coins: 1000,
         winTimes: 20,
@@ -41,3 +43,19 @@ window.PlayerDataPack = cc.Class({
         playTimes: 30,
     }
 })
+window.GetDirString=function(dir)
+{
+    switch(dir)
+    {
+        case 0:
+        return "East"
+        case 1:
+        return "South"
+        case 2:
+        return "West"
+        case 3:
+        return "North"
+        default:
+        return "NullDir num is "+dir
+    }
+}

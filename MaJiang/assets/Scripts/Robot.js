@@ -12,6 +12,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        isMain:false,
+        isActive:false,
         id:100,
         coins: 0,
         winTimes: 0,

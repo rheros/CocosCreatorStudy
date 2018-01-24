@@ -18,7 +18,6 @@ cc.Class({
         console.log("in onload from gamectrl")
         this.store = this.getComponent("CardStore")
         this.store.gameCtrl = this
-        this.store.createCardsStore()
         console.log(this.store.cardsStore.length + " from gamectrl")
         this.ser = this.getComponent("Main")
         this.ser.connectServer(this.selfPlayer.id)
@@ -35,7 +34,7 @@ cc.Class({
     initialPlayers(playerData) {
         playerData.forEach(data => {
             console.log("set dir :"+data.dir)
-            var ob = { data: null, side: null }
+            var ob = { data: null, side: null,isMain:false}
             ob.data = data
             switch (data.dir) {
                 case Directions.East:
@@ -59,36 +58,20 @@ cc.Class({
                 this.selfDir = data.dir
             }
         });
-        this._inistialPlayerPos()
+        this._inistialPlayerPos()        
     },
+
     _inistialPlayerPos() {
-        switch (this.selfDir) {
-            case Directions.East:
-                this.East.side = Sides.Bottom
-                this.South.side = Sides.Left
-                this.West.side = Sides.Top
-                this.North.side = Sides.Right
-                break
-            case Directions.South:
-                this.South.side = Sides.Bottom
-                this.West.side = Sides.Left
-                this.North.side = Sides.Top
-                this.East.side = Sides.Right
-                break
-            case Directions.West:
-                this.West.side = Sides.Bottom
-                this.North.side = Sides.North
-                this.East.side = Sides.Top
-                this.South.side = Sides.Right
-                break
-            case Directions.North:
-                this.North.side = Sides.Bottom
-                this.East.side = Sides.Left
-                this.South.side = Sides.Top
-                this.West.side = Sides.Right
-                break
-        }
-    },
+        this.East.side=(2-this.selfDir+4)%4
+        this.South.side=(3-this.selfDir+4)%4
+        this.West.side=(4-this.selfDir+4)%4
+        this.North.side=(5-this.selfDir+4)%4
+
+        this.store.setDirectionString(this.East.side,"East4")
+        this.store.setDirectionString(this.South.side,"South33")
+        this.store.setDirectionString(this.West.side,"West1")
+        this.store.setDirectionString(this.North.side,"North2")
+      },
     startGame() {
     },
     cardOut(card) {
