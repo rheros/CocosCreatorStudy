@@ -33,45 +33,46 @@ cc.Class({
     },
     initialPlayers(playerData) {
         playerData.forEach(data => {
+            if (data.id = this.selfPlayer.getComponent("Player").id) {// daixu
+                this.selfDir = data.dir
+            }
+            console.log("selfDir "+data.dir)
+        })
+        console.log("selfDir "+this.selfDir+"self id "+this.getComponent("Player").id)
+        playerData.forEach(data => {
             console.log("set dir :"+data.dir)
-            var ob = { data: null, side: null,isMain:false}
+            var ob ={ data: null, side: null,isMain:false}
             ob.data = data
             switch (data.dir) {
                 case Directions.East:
                     this.East = ob
-                    console.log("set east")
+                    this.East.side=(2-this.selfDir+4)%4
+                    this.store.setDirectionString(this.East.side,"东 "+data.id)
+                    console.log(this.selfDir+ " set east side is "+this.East.side)
                     break
                 case Directions.South:
                     this.South = ob
-                    console.log("set South")
+                    this.South.side=(3-this.selfDir+4)%4
+                    this.store.setDirectionString(this.South.side,"南 "+data.id)
+                    console.log(this.selfDir+" set South "+this.South.side)
                     break
                 case Directions.West:
                     this.West = ob
-                    console.log("set West")
+                    this.West.side=(4-this.selfDir+4)%4
+                    this.store.setDirectionString(this.West.side,"西 "+data.id)
+                    console.log(this.selfDir+" set West "+this.West.side)
                     break
                 case Directions.North:
                     this.North = ob
-                    console.log("set North")
+                    this.North.side=(5-this.selfDir+4)%4
+                    this.store.setDirectionString(this.North.side,"北 "+data.id) 
+                    console.log(this.selfDir+" set North "+this.North.side)
                     break
             }
-            if (data.id = this.selfPlayer.getComponent("Player").id) {// daixu
-                this.selfDir = data.dir
-            }
+
         });
-        this._inistialPlayerPos()        
     },
 
-    _inistialPlayerPos() {
-        this.East.side=(2-this.selfDir+4)%4
-        this.South.side=(3-this.selfDir+4)%4
-        this.West.side=(4-this.selfDir+4)%4
-        this.North.side=(5-this.selfDir+4)%4
-
-        this.store.setDirectionString(this.East.side,"East4")
-        this.store.setDirectionString(this.South.side,"South33")
-        this.store.setDirectionString(this.West.side,"West1")
-        this.store.setDirectionString(this.North.side,"North2")
-      },
     startGame() {
     },
     cardOut(card) {

@@ -18,7 +18,7 @@ window.Sides=cc.Enum({
     Left:3
 })
 window.randomSort = function (a, b) {
-    return Math.random() > 0 ? -1 : 1;
+    return Math.random() >0.5 ? -1 : 1;
 }
 
 window.StoreDataPack = cc.Class({

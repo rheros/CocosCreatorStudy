@@ -34,12 +34,14 @@ cc.Class({
     },
     _randomDirectoions()
     {
-        console.log("players length "+this.players.length)
+        this.players.forEach(element => {
+            console.log(element.id)
+        });
         this.players.sort(randomSort)
         for(var i=0;i<this.players.length;i++)
         {
             this.players[i].dir=i
-            console.log("players dir "+i+" dir"+this.players[i].dir)
+            console.log("players dir "+i+" id"+this.players[i].id)
         }
     },
     _initialPlayerDataLocal() {

@@ -20,6 +20,15 @@ cc.Class({
         var col = storeData.length / 4
         var curDir=this.gameCtrl.selfDir
         var sideArray=[]
+        //before create  clean children
+        this.deskPosProxy.forEach(data => {
+            data.getComponent("StoreProxyCtrl").wallPosProxyBottom.children.forEach(d=>{
+                d.destroy()
+            })
+            data.getComponent("StoreProxyCtrl").wallPosProxyTop.children.forEach(d=>{
+                d.destroy()
+            })
+        });
         for(var i=0;i<4;i++)//array pos by eswn , the first pos is east
         {
             var offset=2-curDir
@@ -34,6 +43,7 @@ cc.Class({
                 this.backCardsStore.push(card)
             }
         }
+        this. _resetViewSort()
     },
     setDirectionString(index,dir){
         this.deskPosProxy[index].getComponent("StoreProxyCtrl").setDirectionString(dir)
@@ -49,6 +59,19 @@ cc.Class({
     //for test
     printCards() {
 
-    }
+    },   
+    _resetViewSort()
+    {
+        var bottomRoot=this.deskPosProxy[1].getComponent("StoreProxyCtrl").wallPosProxyBottom
+        var topRoot=this.deskPosProxy[1].getComponent("StoreProxyCtrl").wallPosProxyTop
+        var count=bottomRoot.children.length
+        console.log(bottomRoot.x+" child "+bottomRoot.children[0].x)
+        console.log(topRoot.x+"child"+topRoot.children[0].x)
+        for(var i=0;i<count;i++)
+        {
+            topRoot.children[i].zIndex=count-i-1
+            bottomRoot.children[i].zIndex=count-i-1
+        }
+    },
 
 });
