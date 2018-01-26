@@ -7,6 +7,7 @@ cc.Class({
         wallPosProxyBottom:cc.Node,
         handPosProxy:cc.Node,
         dirLabel:cc.Label,
+        idLabel:cc.Label,
         Down:true,
     },
     addWallCard(card)
@@ -24,6 +25,10 @@ cc.Class({
     },
     setDirectionString(dir)
     {
-        this.dirLabel.string=dir
+        this.dirLabel.string=GetDirString(dir)
+    },
+    setPlayerId(id)
+    {
+        this.idLabel.string=id
     }
 });

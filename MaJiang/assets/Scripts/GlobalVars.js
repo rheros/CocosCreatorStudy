@@ -30,17 +30,32 @@ window.StoreDataPack = cc.Class({
         id: 0,
         type: 0,// bing tiao feng hua
         num: 0,
+        inStore:true
     }
 })
+window.directionToSide(selfdir,dir)
+{
+    return (2+dir-selfDir+4)%4
+}
 window.PlayerDataPack = cc.Class({
     properties: {
         isMain:false,
         isActive:false,
-        dir: 0,
+        id:0,
         coins: 1000,
         winTimes: 20,
         loseTimes: 10,
         playTimes: 30,
+        dir: 0,
+        bing:[],
+        wan:[],
+        tiao:[],
+        feng:[],
+        hua:[],
+        chi:[],
+        gang:[],
+        peng:[],
+        cards:[]
     }
 })
 window.GetDirString=function(dir)
@@ -48,13 +63,13 @@ window.GetDirString=function(dir)
     switch(dir)
     {
         case 0:
-        return "East"
+        return "东"
         case 1:
-        return "South"
+        return "南"
         case 2:
-        return "West"
+        return "西"
         case 3:
-        return "North"
+        return "北"
         default:
         return "NullDir num is "+dir
     }

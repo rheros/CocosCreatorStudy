@@ -24,7 +24,18 @@ cc.Class({
             type:cc.Enum(Directions)
         }
     },
-
+    initialPlayerDataLocal() {
+        var data = new PlayerDataPack()
+        data.id = this.id
+        data.isMain = this.isMain
+        data.isActive = this.isActive
+        data.dir = this.dir
+        data.coins =this.coins
+        data.winTimes = this.winTimes
+        data.loseTimes = this.loseTimes
+        data.playTimes = this.playTimes
+        return data
+    },
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
