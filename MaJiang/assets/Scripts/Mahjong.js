@@ -12,32 +12,30 @@ cc.Class({
             default:null,
             visible:false
         },
-        hand: {
-            default: null,
-            type: cc.Node
-        },
         labels: {
             default: [],
             type: [cc.Node]
         },
-        from: cc.Node
+        from:{
+            default:null,
+            type:cc.Node,
+            visible:false
+        }
     },
     clicked() {
         this.GameCtrl.cardOut()
     },
-    onDesk() {
-        this._hideAll()
-        if (this.desk != null) {
-            this.desk.getComponent('MahjongLabelCtrl').setNum(this.num)
-            this.desk.active = true
-        }
-    },
     setDisplay() {
-        this.desk.getComponent('MahjongLabelCtrl').setNum(this.num)
-    },
-    setNum(num) {
         this._hideLabels()
-        this.labels[num].active = true
+        if(this.type==MaTypes.feng)
+        {
+            cc.warn(getFengString(this.num))
+        }
+        else
+        {
+            cc.warn(this.num)
+        }
+        this.labels[this.num].active = true
     },
     _hideLabels() {
         for (var i = 1; i < this.labels.length; i++) {

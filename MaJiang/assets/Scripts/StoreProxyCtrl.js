@@ -32,6 +32,7 @@ cc.Class({
         this.wallPosProxyBottom.getComponent(cc.Layout).enabled = true
         this.wallPosProxyTop.getComponent(cc.Layout).enabled = true
         this.handPosProxy.getComponent(cc.Layout).enabled = true
+
         this.wallPosProxyBottom.children.forEach(d => {
             d.destroy()
         })
@@ -41,6 +42,7 @@ cc.Class({
         this.handPosProxy.children.forEach(d => {
             d.destroy()
         })
+
         this.wallPosProxyBottom.active = BnodeState
         this.wallPosProxyTop.active = TnodeState
         this.handPosProxy.active = HnodeState
@@ -70,15 +72,17 @@ cc.Class({
     },
     initialHandCard(cardsData) {
         //12 cards
+        var showInitialData=false
+        if (showInitialData&&this.proxySide == Sides.Bottom) {
+            cc.warn("server initial cards data")
+        cardsData.forEach(cd => {
+            cc.warn("num:"+cd.num+" id"+cd.id+" type:"+getMajhongTypeString(cd.type))
+        });
+        }
         for (var i = 0; i < 3; i++) {
             if (this.proxySide == Sides.Bottom) {
                 for (var j = 0; j < 4; j++) {
-                    var cd=cardsData[j+i*4]
-                    var card = cc.instantiate(this.handCardPrefab[cd.type])
-                    var ma = card.getComponent("Mahjong")
-                    ma.
-                    card.parent = this.handPosProxy
-                    this.handCards.push(card)
+                    this._addHandCard(cardsData,j+i*4)
                 }
             } else {
                 this.setHandCard((i + 1) * 4)
@@ -86,14 +90,24 @@ cc.Class({
         }
         //last one
         if (this.proxySide == Sides.Bottom) {
-            var card = cc.instantiate(this.handCardPrefab[0])
-            //var ma = card.getComponent("Mahjong")
-            card.parent = this.handPosProxy
-            this.handCards.push(card)
+           this._addHandCard(cardsData,12)
         }
         else {
             this.setHandCard(13)
         }
+        this.handPosProxy.getComponent(cc.Layout).enabled=true
+    },
+    _addHandCard(data,index)
+    {
+        var cd=data[index]
+        var card = cc.instantiate(this.handCardPrefab[cd.type])
+        card.scale=1
+        var ma = card.getComponent("Mahjong")
+        ma.num=cd.num
+        ma.id=cd.id
+        ma.setDisplay()
+        card.parent = this.handPosProxy
+        this.handCards.push(card)
     },
     setHandCard(num) {
         for (var i = 0; i < 13; i++) {

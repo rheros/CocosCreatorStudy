@@ -90,3 +90,43 @@ window.GetSideString=function(dir)
         return "NullDir num is "+dir
     }
 }
+window.getMajhongTypeString=function(type)
+{
+    switch(type)
+    {
+        case 0:
+        return "万"
+        case 1:
+        return "饼"
+        case 2:
+        return "条"
+        case 3:
+        return "风"
+        case 4:
+        return "花"
+        default:
+        return "位置麻将类型"
+    }
+}
+window.getFengString=function(fengNum)
+{
+    switch(fengNum)
+    {
+        case 1:
+        return "东"
+        case 2:
+        return "南"
+        case 3:
+        return "西"
+        case 4:
+        return "北"
+        case 5:
+        return "中"
+        case 6:
+        return "发"
+        case 7:
+        return "白"
+        default:
+        return "未知风头"
+    }
+}
