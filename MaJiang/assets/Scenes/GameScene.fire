@@ -3820,7 +3820,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 158
@@ -5185,6 +5185,16 @@
     "handPosProxy": {
       "__id__": 115
     },
+    "handCardPrefab": [
+      {
+        "__uuid__": "26cb81e2-49f2-43a0-9c12-3c1146b0b8cf"
+      }
+    ],
+    "handCards": [],
+    "coverCard": {
+      "__uuid__": "c1503cdb-c3aa-423f-b682-1fa0f4585b4d"
+    },
+    "proxySide": 0,
     "dirLabel": {
       "__id__": 112
     },
@@ -7314,7 +7324,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 263
@@ -8588,6 +8598,16 @@
     "handPosProxy": {
       "__id__": 223
     },
+    "handCardPrefab": [
+      {
+        "__uuid__": "23ab9831-dccb-48ee-bd7e-a2de4a7f7b65"
+      }
+    ],
+    "handCards": [],
+    "coverCard": {
+      "__uuid__": "c06188a8-648f-4d5c-88c7-4663a0b66eea"
+    },
+    "proxySide": 3,
     "dirLabel": {
       "__id__": 220
     },
@@ -12228,7 +12248,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 2575
@@ -81605,6 +81625,28 @@
     "handPosProxy": {
       "__id__": 376
     },
+    "handCardPrefab": [
+      {
+        "__uuid__": "d29099fc-3490-498d-b080-1f3a19e89150"
+      },
+      {
+        "__uuid__": "e7dfa5c5-9510-40f3-bc96-32a885ea53ee"
+      },
+      {
+        "__uuid__": "bfae9599-6539-4ca6-9030-5eb8e00d39bf"
+      },
+      {
+        "__uuid__": "e502a8b3-d29c-4f05-a128-2cd32b577f98"
+      },
+      {
+        "__uuid__": "03c86cec-3373-43ac-a3eb-167e1e4f196f"
+      }
+    ],
+    "handCards": [],
+    "coverCard": {
+      "__uuid__": "c1503cdb-c3aa-423f-b682-1fa0f4585b4d"
+    },
+    "proxySide": 2,
     "dirLabel": {
       "__id__": 373
     },
@@ -85333,7 +85375,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 2731
@@ -86607,6 +86649,16 @@
     "handPosProxy": {
       "__id__": 2691
     },
+    "handCardPrefab": [
+      {
+        "__uuid__": "4ca0588e-4645-4b87-a43f-9f0cb8f469f0"
+      }
+    ],
+    "handCards": [],
+    "coverCard": {
+      "__uuid__": "c06188a8-648f-4d5c-88c7-4663a0b66eea"
+    },
+    "proxySide": 1,
     "dirLabel": {
       "__id__": 2688
     },
@@ -87513,12 +87565,6 @@
     },
     "_enabled": true,
     "cardsStore": [],
-    "backCardv": {
-      "__uuid__": "c1503cdb-c3aa-423f-b682-1fa0f4585b4d"
-    },
-    "backCardh": {
-      "__uuid__": "c06188a8-648f-4d5c-88c7-4663a0b66eea"
-    },
     "backCardsStore": [],
     "waitStore": [],
     "startIndex": 0,
@@ -87562,7 +87608,6 @@
       "__id__": 2
     },
     "_enabled": true,
-    "Player": null,
     "selfDir": 0,
     "East": null,
     "South": null,

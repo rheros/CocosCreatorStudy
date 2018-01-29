@@ -3,7 +3,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        Player: cc.Node,
         selfDir: 0,
 
         East:
@@ -27,7 +26,6 @@ cc.Class({
             type: Object,
             visible: false
         },
-
     },
     // LIFE-CYCLE CALLBACKS:
     onLoad() {
@@ -43,11 +41,9 @@ cc.Class({
     setStore(storeData) {
         this.store.createCardWall(storeData)
     },
-    initialPlayerCards(playersData) {
+    //for each player
+    setPlayerCards(playersData) {
         this.store.initialHandCards(playersData)
-    },
-    setInitialPlayers(players) {
-        this.players = players
     },
     setMode(isStandard) {
         this.standard = isStandard
@@ -58,9 +54,9 @@ cc.Class({
                 this.selfDir = data.dir
             }
         })
-        console.log("selfDir " + GetDirString(this.selfDir) + "self id " + this.getComponent("Player").id)
+        cc.log("selfDir " + GetDirString(this.selfDir) + "self id " + this.getComponent("Player").id)
         playerData.forEach(data => {
-            console.log("set dir :" + GetDirString(data.dir) + " and id is" + data.id)
+            cc.log("set dir :" + GetDirString(data.dir) + " and id is" + data.id)
             var ob = { data: null, side: null, isMain: false }
             ob.data = data
             switch (data.dir) {
@@ -88,7 +84,7 @@ cc.Class({
         });
     },
     _setDisplayString(obj) {
-        console.log("obj side" +GetSideString(obj.side)+" dir "+obj.data.dir)
+        cc.log("obj side" +GetSideString(obj.side)+" dir "+obj.data.dir)
         var storProx = this.store.deskPosProxy[obj.side].getComponent("StoreProxyCtrl")
         storProx.setDirectionString(obj.data.dir)
         storProx.setPlayerId(obj.data.id)

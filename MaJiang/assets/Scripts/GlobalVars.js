@@ -12,7 +12,7 @@ window.Directions = cc.Enum({
     South: 3
 });
 window.Sides=cc.Enum({
-    Up:0,
+    Top:0,
     Left:1,
     Bottom:2,
     Right:3

@@ -7,18 +7,18 @@ cc.Class({
         },
         num: 1,
         id: 0,
-        GameCtrl: null,
+        GameCtrl:
+        {
+            default:null,
+            visible:false
+        },
         hand: {
             default: null,
             type: cc.Node
         },
-        desk: {
-            default: null,
-            type: cc.Node
-        },
-        store: {
-            default: null,
-            type: cc.Node
+        labels: {
+            default: [],
+            type: [cc.Node]
         },
         from: cc.Node
     },
@@ -32,23 +32,16 @@ cc.Class({
             this.desk.active = true
         }
     },
-    inHand() {
-        this._hideAll()
-        if (this.hand != null) {
-            this.hand.getComponent('MahjongLabelCtrl').setNum(this.num)
-            this.hand.active = true
+    setDisplay() {
+        this.desk.getComponent('MahjongLabelCtrl').setNum(this.num)
+    },
+    setNum(num) {
+        this._hideLabels()
+        this.labels[num].active = true
+    },
+    _hideLabels() {
+        for (var i = 1; i < this.labels.length; i++) {
+            this.labels[i].active = false
         }
     },
-    inStore() {
-        this._hideAll()
-        if (this.store != null) {
-            this.store.active = true
-        }
-    },
-    _hideAll() {
-        this.hand == null ? 0 : this.hand.active = false
-        this.store == null ? 0 : this.store.active = false
-        this.desk == null ? 0 : this.desk.active = false
-    },
-
 });

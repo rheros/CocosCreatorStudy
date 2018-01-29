@@ -25,9 +25,11 @@ cc.Class({
             this.storeData = this.storeData.sort(randomSort)
             //tell client to create Wall
             this.gameCtrl.setStore(this.storeData)
-            //tell client to initial handCards
-            var initialData=this._initialHandCards(this.players)
-            this.gameCtrl.initialPlayerCards(initialData)
+            //tell client to initial handCards, will from server
+            var initialPlayers = this._initialHandCards(this.players)
+            //now 
+            var singleData = this._getInitialDataById(this.gameCtrl.selfPlayer.id)
+            this.gameCtrl.setPlayerCards(singleData.cards)
         }
     },
 
@@ -36,6 +38,7 @@ cc.Class({
         this.gameCtrl = this.getComponent("GameCtrl")
     },
     initialCardsStore(isStandard) {
+        cc.log("in initialCardsStore")
         var baseId = 1
         var data = []
         //wan
@@ -102,12 +105,12 @@ cc.Class({
     },
     _randomDirectoions() {
         this.players.forEach(element => {
-            console.log(element.id)
+            cc.log(element.id)
         });
         this.players.sort(randomSort)
         for (var i = 0; i < this.players.length; i++) {
             this.players[i].dir = i
-            console.log("players dir " + GetDirString(i) + " id" + this.players[i].id)
+            cc.log("players dir " + GetDirString(i) + " id" + this.players[i].id)
         }
     },
     _initialPlayerDataLocal() {
@@ -122,6 +125,7 @@ cc.Class({
         data.playTimes = 30
         return data
     },
+
     _initialHandCards(players) {
         this.currentIndex = this.startIndex
         //12 X 3 =36cards
@@ -148,5 +152,16 @@ cc.Class({
             }
         });
         return players
-    }
+    },
+    _getInitialDataById(id) {
+        var data = null
+        this.players.forEach(p => {
+            if (p.id == id)
+                data = p
+        })
+        if (data == null) {
+            cc.warn("no cards data")
+        }
+        return data
+    },
 });
