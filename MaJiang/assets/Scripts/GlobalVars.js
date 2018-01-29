@@ -7,15 +7,15 @@ window.MaTypes = cc.Enum({
 });
 window.Directions = cc.Enum({
     East: 0,
-    South: 1,
+    North: 1,   
     West: 2,
-    North: 3
+    South: 3
 });
 window.Sides=cc.Enum({
     Up:0,
-    Right:1,
+    Left:1,
     Bottom:2,
-    Left:3
+    Right:3
 })
 window.randomSort = function (a, b) {
     return Math.random() >0.5 ? -1 : 1;
@@ -33,9 +33,9 @@ window.StoreDataPack = cc.Class({
         inStore:true
     }
 })
-window.directionToSide(selfdir,dir)
+window.directionToSide=function(selfdir,dir)
 {
-    return (2+dir-selfDir+4)%4
+    return (2-dir-selfdir+4)%4;
 }
 window.PlayerDataPack = cc.Class({
     properties: {
@@ -65,11 +65,27 @@ window.GetDirString=function(dir)
         case 0:
         return "东"
         case 1:
-        return "南"
+        return "北"
         case 2:
         return "西"
         case 3:
-        return "北"
+        return "南"
+        default:
+        return "NullDir num is "+dir
+    }
+}
+window.GetSideString=function(dir)
+{
+    switch(dir)
+    {
+        case 0:
+        return "上"
+        case 1:
+        return "左"
+        case 2:
+        return "下"
+        case 3:
+        return "右"
         default:
         return "NullDir num is "+dir
     }

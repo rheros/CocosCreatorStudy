@@ -107,7 +107,7 @@ cc.Class({
         this.players.sort(randomSort)
         for (var i = 0; i < this.players.length; i++) {
             this.players[i].dir = i
-            console.log("players dir " + i + " id" + this.players[i].id)
+            console.log("players dir " + GetDirString(i) + " id" + this.players[i].id)
         }
     },
     _initialPlayerDataLocal() {

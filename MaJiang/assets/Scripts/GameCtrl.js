@@ -5,7 +5,7 @@ cc.Class({
     properties: {
         Player: cc.Node,
         selfDir: 0,
-       
+
         East:
             {
                 default: null,
@@ -43,8 +43,7 @@ cc.Class({
     setStore(storeData) {
         this.store.createCardWall(storeData)
     },
-    initialPlayerCards(playersData)
-    {
+    initialPlayerCards(playersData) {
         this.store.initialHandCards(playersData)
     },
     setInitialPlayers(players) {
@@ -59,36 +58,37 @@ cc.Class({
                 this.selfDir = data.dir
             }
         })
-        console.log("selfDir " + this.selfDir + "self id " + this.getComponent("Player").id)
+        console.log("selfDir " + GetDirString(this.selfDir) + "self id " + this.getComponent("Player").id)
         playerData.forEach(data => {
-            console.log("set dir :" + data.dir + " and id is" + data.id)
+            console.log("set dir :" + GetDirString(data.dir) + " and id is" + data.id)
             var ob = { data: null, side: null, isMain: false }
             ob.data = data
             switch (data.dir) {
                 case Directions.East:
                     this.East = ob
-                    this.East.side = directionsToSide(this.selfDir,0)
+                    this.East.side = directionToSide(this.selfDir, 0)
                     this._setDisplayString(this.East)
-                    break
-                case Directions.South:
-                    this.South = ob
-                    this.South.side = directionsToSide(this.selfDir,1)
-                    this._setDisplayString(this.South)
-                    break
-                case Directions.West:
-                    this.West = ob
-                    this.West.side = directionsToSide(this.selfDir,2)
-                    this._setDisplayString(this.West)
                     break
                 case Directions.North:
                     this.North = ob
-                    this.North.side = directionsToSide(this.selfDir,3)
+                    this.North.side = directionToSide(this.selfDir, 3)
                     this._setDisplayString(this.North)
+                    break
+                case Directions.West:
+                    this.West = ob
+                    this.West.side = directionToSide(this.selfDir, 2)
+                    this._setDisplayString(this.West)
+                    break
+                case Directions.South:
+                    this.South = ob
+                    this.South.side = directionToSide(this.selfDir, 1)
+                    this._setDisplayString(this.South)
                     break
             }
         });
     },
     _setDisplayString(obj) {
+        console.log("obj side" +GetSideString(obj.side)+" dir "+obj.data.dir)
         var storProx = this.store.deskPosProxy[obj.side].getComponent("StoreProxyCtrl")
         storProx.setDirectionString(obj.data.dir)
         storProx.setPlayerId(obj.data.id)
@@ -101,5 +101,5 @@ cc.Class({
     },
     _newRound() {
     },
-   
+
 });

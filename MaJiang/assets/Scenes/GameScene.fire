@@ -317,7 +317,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 57
@@ -1999,7 +1999,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 110
@@ -5270,7 +5270,7 @@
     },
     "_children": [],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 162
@@ -5405,7 +5405,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 218
@@ -6367,7 +6367,7 @@
     },
     "_children": [],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 195
@@ -8725,7 +8725,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 318
@@ -10407,7 +10407,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 371
@@ -81742,7 +81742,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 2633
@@ -83515,7 +83515,7 @@
       }
     ],
     "_tag": -1,
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 2686
@@ -87244,6 +87244,8 @@
     "standard": true,
     "storeData": [],
     "players": [],
+    "startIndex": 0,
+    "currentIndex": 0,
     "robots": [
       {
         "__id__": 2750
@@ -87525,13 +87527,13 @@
         "__id__": 4
       },
       {
-        "__id__": 160
+        "__id__": 2577
       },
       {
         "__id__": 265
       },
       {
-        "__id__": 2577
+        "__id__": 160
       }
     ],
     "cardsPrefab": [
@@ -87560,9 +87562,7 @@
       "__id__": 2
     },
     "_enabled": true,
-    "selfPlayer": {
-      "__id__": 2
-    },
+    "Player": null,
     "selfDir": 0,
     "East": null,
     "South": null,

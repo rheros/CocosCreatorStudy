@@ -43,6 +43,11 @@ cc.Class({
         this.scheduleOnce(function () {
             this._resetViewSort(this.deskPosProxy)
         }, 0.1);
+        //hide wall
+        this.deskPosProxy.forEach(element => {
+            element.getComponent("StoreProxyCtrl").wallPosProxyTop.active = false
+            element.getComponent("StoreProxyCtrl").wallPosProxyBottom.active = false
+        });
     },
     initialHandCards(playersData) {
         for (var i = 0; i < 3; i++) {
@@ -51,7 +56,7 @@ cc.Class({
                     case Directions.East:
                         console.log("initialSelfCard")
                         for (var j = 0; j < 4; j++) {
-                            var cData = p.cards.pop()
+                            var cData = pd.cards.pop()
                             this.deskPosProxy[2]
                         }
                         
@@ -103,7 +108,6 @@ cc.Class({
         });
     },
     _resetViewSort(proxyArray) {
-
         //disable Layout
         proxyArray.forEach(proxy => {
             var bottom = proxy.getComponent("StoreProxyCtrl").wallPosProxyBottom
