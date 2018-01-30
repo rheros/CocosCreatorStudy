@@ -48,6 +48,12 @@ cc.Class({
     setMode(isStandard) {
         this.standard = isStandard
     },
+    setDize(dizeData)
+    {
+        this.dize1=dizeData.dize1
+        this.dize2=dizeData.dize2
+        this.store.setStartData(dizeData.startSide,dizeData.startIndex)
+    },
     initialPlayers(playerData) {
         playerData.forEach(data => {
             if (data.id == this.selfPlayer.getComponent("Player").id) {// daixu

@@ -8,6 +8,8 @@ cc.Class({
         players: [],
         startIndex: 0,
         currentIndex: 0,
+        dize1: 1,
+        dize2: 1,
         robots: {
             default: [],
             type: [cc.Node]
@@ -27,9 +29,16 @@ cc.Class({
             this.gameCtrl.setStore(this.storeData)
             //tell client to initial handCards, will from server
             var initialPlayers = this._initialHandCards(this.players)
+            //create dize
+            this._RollDize()
+            cc.warn("dize1:" + this.dize1 + "  dize2:" + this.dize2)
+            var minNum = this.dize1 <= this.dize2 ? this.dize1 : this.dize2
+            var startSide = this._getStartSide(this.dize1 + this.dize2)
+            this.gameCtrl.setDize({dize1:this.dize1,dize2:this.dize2,startSide:startSide,startIndex:minNum})
             //now 
             var singleData = this._getInitialDataById(this.gameCtrl.selfPlayer.id)
             this.gameCtrl.setPlayerCards(singleData.cards)
+
         }
     },
 
@@ -164,4 +173,11 @@ cc.Class({
         }
         return data
     },
+    _RollDize() {
+        this.dize1 = RandomDize(1, 6)
+        this.dize2 = RandomDize(1, 6)
+    },
+    _getStartSide(num) {
+        return (num - 1) % 4
+    }
 });
